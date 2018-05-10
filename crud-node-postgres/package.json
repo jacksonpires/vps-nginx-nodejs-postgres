@@ -1,0 +1,17 @@
+{
+  "name": "crud-node-postgres",
+  "version": "0.0.1",
+  "description": "App demonstrating Postgres DB connection and Querying",
+  "main": "node server.js",
+  "author": "Michael Cullen",
+  "dependencies": {
+    "body-parser": "^1.10.0",
+    "colors": "^1.0.3",
+    "express": "^4.10.6",
+    "path": "^0.4.9",
+    "pg": "^4.1.1"
+  },
+  "devDependencies": {
+    "morgan": "~1.1.1"
+  }
+}

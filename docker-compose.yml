@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  web:
+    image: nginx
+    volumes:
+      - ./nginx/app.conf:/etc/nginx/nginx.conf
+    depends_on:
+     - minha_app
+    ports: 
+    - 80:80
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: mypassword
+    volumes:
+      - ./dados_postgres:/var/lib/postgresql/data
+    ports:
+      - 5432
+  minha_app:
+    image: jacksonpires/minha-app-dockerizada:latest
+    build: .
+    environment: 
+      - ACTUAL_ENV=${ENV}
+    depends_on:
+      - db
+
